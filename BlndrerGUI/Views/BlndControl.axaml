@@ -1,0 +1,39 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.BlndControl"
+             x:DataType="vm:BlndControlViewModel">
+
+    <Design.DataContext>
+        <vm:BlndControlViewModel />
+    </Design.DataContext>
+
+    <ScrollViewer HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel>
+            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="25" Text="[HEADER]" Margin="5" />
+            <Border CornerRadius="1" BorderThickness="2" BorderBrush="Black" Padding="5">
+                <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto">
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
+                        
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
+                </Grid>
+            </Border>
+
+            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="25" Text="[POOL]" Margin="5" />
+            <Border CornerRadius="1" BorderThickness="2" BorderBrush="Black" Padding="5">
+                <StackPanel>
+                    <TextBlock Text="{Binding BlndFile.Pool.FormatToken}"/>
+                    <TextBlock Text="{Binding BlndFile.Pool.Version}"/>
+                    <TextBlock Text="{Binding BlndFile.Pool.UseCascadeBlend}"/>
+                    <TextBlock Text="{Binding BlndFile.Pool.CascadeBlendValue}"/>
+                    <TextBlock Text="{Binding BlndFile.Pool.Skeleton}"/>
+                    <TextBlock Text="{Binding BlndFile.Pool.ResourceSize}"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
