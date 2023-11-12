@@ -8,7 +8,8 @@
         x:Class="BlndrerGUI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/icon.ico"
-        Title="BlndrerGUI">
+        Title="BlndrerGUI"
+        CanResize="False">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -19,8 +20,6 @@
            <Button Content="Open" Command="{Binding OpenBlndFileCommand}"/>
            <Button Content="Save" Command="{Binding SaveBlndFileCommand}"/> 
         </StackPanel>
-        
-        
         <views:BlndControl DataContext="{Binding BlndControl}"/>
     </StackPanel>
 

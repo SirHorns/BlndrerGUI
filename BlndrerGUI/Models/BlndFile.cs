@@ -4,6 +4,14 @@ public class BlndFile
 {
     public Header Header { get; init; }
     public Pool Pool { get; init; }
+    
+    public BlndFile(){}
+    
+    public BlndFile(Header header, Pool pool)
+    {
+        Header = header;
+        Pool = pool;
+    }
 }
 
 public class Header
