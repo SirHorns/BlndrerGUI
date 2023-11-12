@@ -27,7 +27,17 @@ public class Pool
     public uint Version{ get; set; }
     public bool UseCascadeBlend{ get; set; }
     public float CascadeBlendValue{ get; set; }
+    public BlendTrack[] BlendTrackAry { get; set; }
     public string Skeleton{ get; set; }
     public string[] AnimNames{ get; set; }
     public uint ResourceSize{ get; set; }
+}
+
+public class BlendTrack
+{
+    public float BlendWeight { get; set; }
+    public uint BlendMode { get; set; }
+    public uint Index { get; set; }
+    public string Name { get; set; }
+    public uint ResourceSize { get; set; }
 }

@@ -14,6 +14,7 @@ namespace BlndrerGUI.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty] BlndControlViewModel _blndControl;
+    [ObservableProperty] private string _fileName;
     
     [RelayCommand]
     private async Task OpenBlndFile(CancellationToken token)
@@ -32,7 +33,8 @@ public partial class MainWindowViewModel : ViewModelBase
             {
                 return;
             }
-            
+
+            FileName = file.Name;
             var blnd = BlndTools.ReadBLND(file.Path.AbsolutePath);
             BlndControl = new BlndControlViewModel(blnd);
         }

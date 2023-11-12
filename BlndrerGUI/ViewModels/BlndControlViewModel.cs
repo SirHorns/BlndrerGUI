@@ -18,6 +18,21 @@ public partial class BlndControlViewModel: ViewModelBase
         else
         {
             ActiveBlndFile = file;
+            
+            var bTracks = new BlendTrack[file.Pool.mBlendTrackAry.Length];
+            for (int i = 0; i < file.Pool.mBlendTrackAry.Length; i++)
+            {
+                var track = file.Pool.mBlendTrackAry[i];
+                bTracks[i] = new BlendTrack()
+                {
+                    BlendWeight = track.mBlendWeight,
+                    BlendMode = track.mBlendMode,
+                    Index = track.mIndex,
+                    Name = track.mName,
+                    ResourceSize = track.mResourceSize
+                };
+            }
+            
             BlndFile = new BlndFile
             {
                 Header = new Header
@@ -32,6 +47,7 @@ public partial class BlndControlViewModel: ViewModelBase
                     Version = file.Pool.mVersion,
                     UseCascadeBlend = file.Pool.mUseCascadeBlend,
                     CascadeBlendValue = file.Pool.mCascadeBlendValue,
+                    BlendTrackAry = bTracks,
                     Skeleton = file.Pool.mSkeleton.path,
                     ResourceSize = file.Pool.mResourceSize
                 }

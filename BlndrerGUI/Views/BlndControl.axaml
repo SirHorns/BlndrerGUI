@@ -1,6 +1,7 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             xmlns:models="clr-namespace:BlndrerGUI.Models"
              x:Class="BlndrerGUI.Views.BlndControl"
              x:DataType="vm:BlndControlViewModel">
 
@@ -8,10 +9,10 @@
         <vm:BlndControlViewModel />
     </Design.DataContext>
 
-    <ScrollViewer HorizontalAlignment="Center" VerticalAlignment="Center" Width="700">
+    <ScrollViewer HorizontalAlignment="Center" Width="700">
         <StackPanel>
-            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="25" Text="[HEADER]"
-                       Margin="5" />
+            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="20" Text="[HEADER]"
+                       Margin="0,0,0,5" />
             <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto">
                 <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                            FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:" />
@@ -20,19 +21,20 @@
                 <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                            FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
 
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
-                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
             </Grid>
 
-            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="25" Text="[POOL]"
-                       Margin="5" />
-            <StackPanel>
+            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="20" Text="[POOL]"
+                       Margin="0,0,0,5" />
+            <StackPanel Orientation="Horizontal">
+                <StackPanel>
                     <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
                         <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
-                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                                    FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
+                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
+                                   FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
                         <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                                    FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
                         <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
@@ -42,16 +44,42 @@
                         <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                                    FontFamily="{StaticResource EnriquetaFont}" Text="ResourceSize:" />
 
-                        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Pool.FormatToken}" />
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Pool.Version}" />
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Pool.Version}" />
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Pool.FormatToken}" />
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Pool.UseCascadeBlend}" />
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding BlndFile.Pool.CascadeBlendValue}" />
                         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding BlndFile.Pool.Skeleton}" />
                         <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding BlndFile.Pool.ResourceSize}" />
                     </Grid>
                 </StackPanel>
-            
-            
+
+                <StackPanel>
+                    <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}"
+                               Text="BlendTrackAry:" />
+                    <ScrollViewer Height="0" Width="0">
+                        <ListBox ItemsSource="{Binding BlndFile.Pool.BlendTrackAry}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:BlendTrack">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Name}" Margin="2" />
+                                        <TextBlock Text="{Binding Index}" Margin="2" />
+                                        <TextBlock Text="{Binding BlendMode}" Margin="2" />
+                                        <TextBlock Text="{Binding BlendWeight}" Margin="2" />
+                                        <TextBlock Text="{Binding ResourceSize}" Margin="2" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </ScrollViewer>
+                    <DataGrid ItemsSource="{Binding BlndFile.Pool.BlendTrackAry}" AutoGenerateColumns="True"
+                              GridLinesVisibility="All">
+
+                    </DataGrid>
+                </StackPanel>
+
+            </StackPanel>
+
+
         </StackPanel>
     </ScrollViewer>
 </UserControl>
