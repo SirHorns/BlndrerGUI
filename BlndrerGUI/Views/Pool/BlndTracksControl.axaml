@@ -1,0 +1,29 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.BlndTracksControl"
+             x:DataType="vm:BlndControlViewModel">
+
+    <Design.DataContext>
+        <vm:BlndControlViewModel />
+    </Design.DataContext>
+    
+    <StackPanel>
+        <DataGrid ItemsSource="{Binding BlendTracks}" 
+                  GridLinesVisibility="Horizontal"
+                  MinHeight="100"
+                  MaxHeight="300"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Index" Binding="{Binding Index}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="BlendMode" Binding="{Binding BlendMode}"/>
+                <DataGridTextColumn Header="BlendWeight" Binding="{Binding BlendWeight}"/>
+                <DataGridTextColumn Header="ResourceSize" Binding="{Binding ResourceSize}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+    
+</UserControl>

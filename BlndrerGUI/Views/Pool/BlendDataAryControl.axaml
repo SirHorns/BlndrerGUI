@@ -1,0 +1,27 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.BlendDataAryControl"
+             x:DataType="vm:BlndControlViewModel">
+    
+    <Design.DataContext>
+        <vm:BlndControlViewModel />
+    </Design.DataContext>
+    
+    <StackPanel>
+        <DataGrid ItemsSource="{Binding BlendDataAry}" 
+                  GridLinesVisibility="Horizontal"
+                  MinHeight="100"
+                  MaxHeight="300"
+                  CanUserReorderColumns="False"
+                  CanUserResizeColumns="False"
+                  CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="FromAnimId" Binding="{Binding FromAnimId}"/>
+                <DataGridTextColumn Header="ToAnimId" Binding="{Binding ToAnimId}"/>
+                <DataGridTextColumn Header="BlendFlags" Binding="{Binding BlendFlags}"/>
+                <DataGridTextColumn Header="BlendTime" Binding="{Binding BlendTime}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

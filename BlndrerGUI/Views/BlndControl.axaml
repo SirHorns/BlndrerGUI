@@ -1,6 +1,7 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             xmlns:views="clr-namespace:BlndrerGUI.Views"
              x:Class="BlndrerGUI.Views.BlndControl"
              x:DataType="vm:BlndControlViewModel">
 
@@ -9,95 +10,13 @@
     </Design.DataContext>
 
     <ScrollViewer HorizontalAlignment="Center" Width="700" Height="700">
-        <StackPanel>
-            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="20" Text="[HEADER]"
-                       Margin="0,0,0,5" />
-            <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto">
-                <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                           FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:" />
-                <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                           FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
-                <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                           FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
-
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
-                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
-            </Grid>
-
-            <TextBlock FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" FontSize="20" Text="[POOL]"
-                       Margin="0,0,0,5" />
-            <StackPanel>
-                <StackPanel>
-                    <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
-                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
-                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
-                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
-                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="CascadeBlendValue:" />
-                        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="Skeleton:" />
-
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Pool.Version}" />
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Pool.FormatToken}" />
-                        <ComboBox Grid.Row="2" Grid.Column="1" SelectedIndex="{Binding BlndFile.Pool.UseCascadeBlend}">
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="True"/>
-                        </ComboBox>
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding BlndFile.Pool.CascadeBlendValue}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding BlndFile.Pool.Skeleton}" />
-                    </Grid>
-                </StackPanel>
-                
-                <TabControl>
-                    <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlndTracks">
-                        <StackPanel>
-                            <DataGrid ItemsSource="{Binding BlendTracks}" 
-                                      GridLinesVisibility="Horizontal"
-                                      MinHeight="100"
-                                      MaxHeight="300"
-                                      CanUserReorderColumns="False"
-                                      CanUserResizeColumns="False"
-                                      CanUserSortColumns="False">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Index" Binding="{Binding Index}"/>
-                                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                                    <DataGridTextColumn Header="BlendMode" Binding="{Binding BlendMode}"/>
-                                    <DataGridTextColumn Header="BlendWeight" Binding="{Binding BlendWeight}"/>
-                                    <DataGridTextColumn Header="ResourceSize" Binding="{Binding ResourceSize}"/>
-                                </DataGrid.Columns>
-                            </DataGrid>
-                        </StackPanel>
-                    </TabItem>
-                    
-                    <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="Animations">
-                        <StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <ListBox ItemsSource="{Binding AnimNames}"
-                                         Width="490"
-                                         MinHeight="100"
-                                         MaxHeight="300">
-                                    <ListBox.ItemTemplate>
-                                        <DataTemplate>
-                                            <TextBox DockPanel.Dock="Left" Text="{Binding Path}"/>
-                                        </DataTemplate>
-                                    </ListBox.ItemTemplate>
-                                </ListBox>
-                                
-                                <StackPanel Margin="10,0,0,0">
-                                    <Button HorizontalAlignment="Center" Content="ADD"/>
-                                    <Button HorizontalAlignment="Center" Content="REMOVE"/>
-                                </StackPanel>
-                            </StackPanel>
-                            
-                        </StackPanel>
-                    </TabItem>
-                </TabControl>
-
-            </StackPanel>
-        </StackPanel>
+        <TabControl>
+            <TabItem Padding="20" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="[HEADER]">
+                <views:HeaderDataControl/>
+            </TabItem>
+            <TabItem Padding="20" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="[POOL]">
+                <views:PoolDataControl/>
+            </TabItem>
+        </TabControl>
     </ScrollViewer>
 </UserControl>

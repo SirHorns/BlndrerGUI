@@ -1,0 +1,24 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.HeaderDataControl"
+             x:DataType="vm:BlndControlViewModel">
+    
+    <Design.DataContext>
+        <vm:BlndControlViewModel />
+    </Design.DataContext>
+    
+    <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto">
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
+                   FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:" />
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
+                   FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
+                   FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
+    </Grid>
+    
+</UserControl>

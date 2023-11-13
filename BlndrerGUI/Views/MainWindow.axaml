@@ -24,8 +24,6 @@
         
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            
-            
             <views:BlndControl DataContext="{Binding BlndControl}"/>
         </StackPanel>
     </StackPanel>
