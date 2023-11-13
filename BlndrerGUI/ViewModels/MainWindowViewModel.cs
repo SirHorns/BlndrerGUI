@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using blndrer;
+using BlndrerGUI.Models;
 using BlndrerGUI.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -14,7 +16,7 @@ namespace BlndrerGUI.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty] BlndControlViewModel _blndControl;
-    [ObservableProperty] private string _fileName;
+    [ObservableProperty] private string _fileName = "BADWOLF";
     
     [RelayCommand]
     private async Task OpenBlndFile(CancellationToken token)
