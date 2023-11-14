@@ -15,7 +15,15 @@ public partial class MainWindowViewModel : ViewModelBase
     [ObservableProperty] string _windowTitle = "BlndrerGUI";
     [ObservableProperty] BlndControlViewModel _blndControl;
     [ObservableProperty] private string _fileName = "BADWOLF";
+    [ObservableProperty] private bool _createBlnd = true;
+    [ObservableProperty] private bool _createJson = false;
     
+    public MainWindowViewModel()
+    {
+        BlndControl = new BlndControlViewModel();
+    }
+
+
     [RelayCommand]
     private async Task OpenBlndFile(CancellationToken token)
     {
@@ -64,10 +72,17 @@ public partial class MainWindowViewModel : ViewModelBase
                 return;
             }
             
-            var blndPath = Path.Combine(folder.Path.AbsolutePath, "NewBlnd.blnd");
-            var jsonPath = Path.Combine(folder.Path.AbsolutePath, "NewBlnd.blnd.json");
-            BlndTools.WriteBLND(BlndControl.BlndFile, blndPath);
-            BlndTools.WriteJSON(BlndControl.BlndFile, jsonPath);
+            var newBlnd = BlndControl.CreateBlnd();
+            
+            if (CreateBlnd)
+            {
+             BlndTools.WriteBLND(newBlnd, Path.Combine(folder.Path.AbsolutePath, $"{FileName}.blnd"));
+            }
+
+            if (CreateJson)
+            {
+               BlndTools.WriteJSON(newBlnd, Path.Combine(folder.Path.AbsolutePath, $"{FileName}_blnd.json"));
+            }
         }
         catch (Exception e)
         {

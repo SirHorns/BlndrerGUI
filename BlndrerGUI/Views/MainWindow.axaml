@@ -23,6 +23,9 @@
                 <StackPanel>
                     <StackPanel>
                         <Image MaxWidth="45" MaxHeight="45" Margin="0,2,0,60" Source="../Assets/icon.ico"/>
+                        <Button MaxWidth="45" MaxHeight="45" Margin="0,2,0,2">
+                            <Image Source="../Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
+                        </Button>
                         <Button MaxWidth="45" MaxHeight="45" Margin="0,2,0,2" Command="{Binding OpenBlndFileCommand}">
                             <Image Source="../Assets/folder_open_FILL0_wght400_GRAD0_opsz24.png"/>
                         </Button>
@@ -51,11 +54,11 @@
                         <TextBlock Margin="5" Text="Generate:"/>
                         <StackPanel Orientation="Horizontal" >
                             <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="Blnd:" />
-                            <CheckBox Margin="10,0,0,0"  VerticalAlignment="Center" IsChecked="True"/> 
+                            <CheckBox Margin="10,0,0,0"  VerticalAlignment="Center" IsChecked="{Binding CreateBlnd}"/> 
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="JSON:"/>
-                            <CheckBox Margin="10,0,0,0" IsChecked="false"/>
+                            <CheckBox Margin="10,0,0,0" IsChecked="{Binding CreateJson}"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>

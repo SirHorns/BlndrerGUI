@@ -6,6 +6,15 @@ public abstract class Resource : Writable
 
     public uint mResourceSize { get; set; }
 
+    protected Resource()
+    {
+    }
+
+    protected Resource(uint mResourceSize)
+    {
+        this.mResourceSize = mResourceSize;
+    }
+
     //public byte[] ExtraBytes;
     private BinaryReader br;
     public Resource(BinaryReader br)

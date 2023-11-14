@@ -44,7 +44,7 @@
                     </Button>
                 </StackPanel>
                 
-                <DataGrid MinWidth="620"  ItemsSource="{Binding BlendTracks}" 
+                <DataGrid MinWidth="620"  ItemsSource="{Binding BlendTrackAry}" 
                           GridLinesVisibility="Horizontal"
                           CanUserReorderColumns="False"
                           CanUserResizeColumns="False"
@@ -75,15 +75,15 @@
         <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="AnimNames">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="0,0,10,0">
-                    <Button Margin="0,2,0,2">
+                    <Button Margin="0,2,0,2" Command="{Binding AddAnimationPathCommand}">
                         <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
                     </Button>
-                    <Button Margin="0,2,0,2" >
+                    <Button Margin="0,2,0,2" Command="{Binding RemoveAnimationPathCommand}">
                         <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/disabled_by_default_FILL0_wght400_GRAD0_opsz24.png"/>
                     </Button>
                 </StackPanel>
                 
-                <ListBox MinWidth="620"  ItemsSource="{Binding AnimNames}">
+                <ListBox SelectedItems="" SelectionMode="Multiple" SelectedIndex="{Binding AnimationIndex}" MinWidth="620"  ItemsSource="{Binding AnimNames}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <TextBox Width="500" DockPanel.Dock="Left" Text="{Binding Path}"/>

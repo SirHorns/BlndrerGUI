@@ -7,7 +7,18 @@ public class TrackResource: Resource
     public uint mIndex { get; set; }
     public string mName { get; set; }
 
-    public TrackResource() : base(null) { }
+    public TrackResource()
+    {
+        
+    }
+
+    public TrackResource(float mBlendWeight, uint mBlendMode, uint mIndex, string mName)
+    {
+        this.mBlendWeight = mBlendWeight;
+        this.mBlendMode = mBlendMode;
+        this.mIndex = mIndex;
+        this.mName = mName;
+    }
 
     public TrackResource(BinaryReader br): base(br)
     {
