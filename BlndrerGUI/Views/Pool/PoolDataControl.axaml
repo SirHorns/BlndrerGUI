@@ -1,30 +1,43 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             xmlns:pool="clr-namespace:BlndrerGUI.Views.Pool"
              x:Class="BlndrerGUI.Views.PoolDataControl"
-             x:DataType="vm:BlndControlViewModel">
+             x:DataType="vm:BlndControlViewModel"
+             Padding="9">
 
-    <StackPanel Margin="9">
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-            <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
-            <TextBlock Text="{Binding BlndFile.Pool.mVersion}" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-            <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
-            <TextBlock Text="{Binding BlndFile.Pool.mFormatToken}" />
-        </StackPanel>
-        <StackPanel>
-            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
-            <ComboBox Margin="0,0,0,5" SelectedIndex="{Binding BlndFile.Pool.mUseCascadeBlend}">
-                <ComboBoxItem Content="False" />
-                <ComboBoxItem Content="True" />
-            </ComboBox>
-            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="CascadeBlendValue:" />
-            <TextBox Margin="0,0,0,5" Width="100" HorizontalAlignment="Left"  TextAlignment="Center" Text="{Binding BlndFile.Pool.mCascadeBlendValue}" />
-            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="TransitionData:" />
-            <TextBlock Margin="0,0,0,5" Text="TODO:" />
-            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Skeleton:" />
-            <TextBox Margin="0,0,0,5" Text="{Binding BlndFile.Pool.mSkeleton.Path}" />
-        </StackPanel>
-    </StackPanel>
+    
+    <TabControl>
+        <TabItem Header="Main">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
+                    <TextBlock Text="{Binding BlndFile.Pool.mVersion}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+                    <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
+                    <TextBlock Text="{Binding BlndFile.Pool.mFormatToken}" />
+                </StackPanel>
+                <StackPanel>
+                    <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
+                    <ComboBox Margin="0,0,0,5" SelectedIndex="{Binding BlndFile.Pool.mUseCascadeBlend}">
+                        <ComboBoxItem Content="False" />
+                        <ComboBoxItem Content="True" />
+                    </ComboBox>
+                    <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="CascadeBlendValue:" />
+                    <TextBox Margin="0,0,0,5" Width="100" HorizontalAlignment="Left"  TextAlignment="Center" Text="{Binding BlndFile.Pool.mCascadeBlendValue}" />
+                    <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="TransitionData:" />
+                    <TextBlock Margin="0,0,0,5" Text="TODO:" />
+                    <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Skeleton:" />
+                    <TextBox Width="400" Margin="0,0,0,5" HorizontalAlignment="Left" TextAlignment="Center" Text="{Binding BlndFile.Pool.mSkeleton.Path}" Watermark="Path to character.skl" />
+                </StackPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Arrays">
+            <pool:PoolDataAryControl/>
+        </TabItem>
+    </TabControl>
+    
+    
+    
 </UserControl>

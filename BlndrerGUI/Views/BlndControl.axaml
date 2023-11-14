@@ -6,18 +6,13 @@
              x:Class="BlndrerGUI.Views.BlndControl"
              x:DataType="vm:BlndControlViewModel">
     
-    
-    <StackPanel Orientation="Horizontal">
-        <StackPanel Background="Bisque" Width="400">
-            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Header]"/>
+    <TabControl>
+        <TabItem Header="Binary Header">
             <views:HeaderDataControl/>
-            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Pool]"/>
+        </TabItem>
+        <TabItem Header="PoolData">
             <views:PoolDataControl/>
-        </StackPanel>
-        <StackPanel Background="Khaki" Width="990">
-            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Pool Arrays]"/>
-            <pool:PoolDataAryControl/>
-        </StackPanel>
-    </StackPanel>
+        </TabItem>
+    </TabControl>
     
 </UserControl>

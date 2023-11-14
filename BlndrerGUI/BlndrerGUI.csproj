@@ -38,14 +38,6 @@
         <DependentUpon>PoolDataControl.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Views\Pool\BlendDataAryControl.axaml.cs">
-        <DependentUpon>BlendDataAryControl.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Views\Pool\AnimationsControl.axaml.cs">
-        <DependentUpon>AnimationsControl.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
       <Compile Update="Views\Pool\BlndTracksControl.axaml.cs">
         <DependentUpon>BlndTracksControl.axaml</DependentUpon>
         <SubType>Code</SubType>

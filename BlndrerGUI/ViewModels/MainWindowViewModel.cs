@@ -36,7 +36,7 @@ public partial class MainWindowViewModel : ViewModelBase
             }
 
             WindowTitle = $"BlndrerGUI: {file.Path.AbsolutePath}";
-            FileName = file.Name;
+            FileName = file.Name.Split(".")[0];
             var blnd = BlndTools.ReadBLND(file.Path.AbsolutePath);
             BlndControl = new BlndControlViewModel(blnd);
         }

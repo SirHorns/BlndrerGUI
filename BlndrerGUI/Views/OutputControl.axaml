@@ -1,0 +1,26 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.OutputControl"
+             x:DataType="vm:MainWindowViewModel"
+             Padding="9">
+    
+    <StackPanel>
+        <StackPanel>
+            <TextBlock Margin="5" Text="Blnd Filename:"/>
+            <TextBox Width="200" HorizontalAlignment="Left" TextAlignment="Center" Text="{Binding FileName}"/>
+        </StackPanel>
+        <StackPanel Margin="0,7,0,7">
+            <TextBlock Margin="5" Text="Generate:"/>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="Blnd:" />
+                <CheckBox Margin="10,0,0,0"  VerticalAlignment="Center" IsChecked="True"/> 
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="JSON:"/>
+                <CheckBox Margin="10,0,0,0" IsChecked="false"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </StackPanel>
+</UserControl>

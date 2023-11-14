@@ -1,18 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="using:BlndrerGUI.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:BlndrerGUI.Views"
         x:Class="BlndrerGUI.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/icon.ico"
         Title="{Binding WindowTitle}"
-        CanResize="False">
+        Width="817"
+        Height="764"
+        MinWidth="817"
+        MinHeight="764">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
+    
     <SplitView IsPaneOpen="True"
                DisplayMode="Inline"
                OpenPaneLength="70">
@@ -36,10 +38,14 @@
             </StackPanel>
         </SplitView.Pane>
         
-        <StackPanel DockPanel.Dock="Top" Height="720" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-            <views:BlndControl DataContext="{Binding BlndControl}"/>
-        </StackPanel>
-        
+        <TabControl>
+            <TabItem Header="Blnd">
+                <views:BlndControl DataContext="{Binding BlndControl}"/>
+            </TabItem>
+            <TabItem Header="Output">
+                <views:OutputControl/>
+            </TabItem>
+        </TabControl>
     </SplitView>
     
 </Window>

@@ -11,6 +11,7 @@
         <entry key="BlndrerGUI/Views/BlndTracksControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/HeaderDataControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/MainWindow.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/OutputControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/Pool/AnimationsControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/Pool/BlendDataAryControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/Pool/BlndTracksControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />

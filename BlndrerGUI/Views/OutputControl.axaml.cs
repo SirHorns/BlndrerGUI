@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace BlndrerGUI.Views;
 
-public partial class BlendDataAryControl : UserControl
+public partial class OutputControl : UserControl
 {
-    public BlendDataAryControl()
+    public OutputControl()
     {
         InitializeComponent();
     }

@@ -9,21 +9,7 @@
     </Design.DataContext>
     
     <StackPanel>
-        <DataGrid ItemsSource="{Binding BlendTracks}" 
-                  GridLinesVisibility="Horizontal"
-                  MinHeight="100"
-                  MaxHeight="300"
-                  CanUserReorderColumns="False"
-                  CanUserResizeColumns="False"
-                  CanUserSortColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Index" Binding="{Binding mIndex}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding mName}"/>
-                <DataGridTextColumn Header="BlendMode" Binding="{Binding mBlendMode}"/>
-                <DataGridTextColumn Header="BlendWeight" Binding="{Binding mBlendWeight}"/>
-                <DataGridTextColumn Header="ResourceSize" Binding="{Binding mResourceSize}"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        
     </StackPanel>
     
 </UserControl>

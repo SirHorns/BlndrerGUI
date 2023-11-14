@@ -3,33 +3,97 @@
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              x:Class="BlndrerGUI.Views.Pool.PoolDataAryControl"
              xmlns:views="clr-namespace:BlndrerGUI.Views"
-             x:DataType="vm:BlndControlViewModel">
-    
+             x:DataType="vm:BlndControlViewModel"
+             MinWidth="700"
+             MaxWidth="1750"
+             MaxHeight="800"
+             MinHeight="600">
+
     <TabControl>
-        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendDataAry">
-            <views:BlendDataAryControl/>
+        <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendDataAry">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,10,0">
+                    <Button Margin="0,2,0,2">
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                    <Button Margin="0,2,0,2" >
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/disabled_by_default_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                </StackPanel>
+                <DataGrid MinWidth="620" 
+                          ItemsSource="{Binding BlendDataAry}" 
+                          GridLinesVisibility="Horizontal"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          CanUserSortColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="FromAnimId" Binding="{Binding mFromAnimId}"/>
+                        <DataGridTextColumn Header="ToAnimId" Binding="{Binding mToAnimId}"/>
+                        <DataGridTextColumn Header="BlendFlags" Binding="{Binding mBlendFlags}"/>
+                        <DataGridTextColumn Header="BlendTime" Binding="{Binding mBlendTime}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
         </TabItem>
-                    
-        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendTrackAry">
-            <views:BlndTracksControl/>
+        <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendTrackAry">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,10,0">
+                    <Button Margin="0,2,0,2">
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                    <Button Margin="0,2,0,2" >
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/disabled_by_default_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                </StackPanel>
+                
+                <DataGrid MinWidth="620"  ItemsSource="{Binding BlendTracks}" 
+                          GridLinesVisibility="Horizontal"
+                          CanUserReorderColumns="False"
+                          CanUserResizeColumns="False"
+                          CanUserSortColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Index" Binding="{Binding mIndex}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding mName}"/>
+                        <DataGridTextColumn Header="BlendMode" Binding="{Binding mBlendMode}"/>
+                        <DataGridTextColumn Header="BlendWeight" Binding="{Binding mBlendWeight}"/>
+                        <DataGridTextColumn Header="ResourceSize" Binding="{Binding mResourceSize}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            
         </TabItem>
-                    
-        <TabItem FontSize="17" Header="ClassAry">
+        <TabItem FontSize="12" Header="ClassAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
-        <TabItem FontSize="17" Header="MaskDataAry">
+        <TabItem FontSize="12" Header="MaskDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
-        <TabItem FontSize="17" Header="EventDataAry">
+        <TabItem FontSize="12" Header="EventDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
-        <TabItem FontSize="17" Header="AnimDataAry">
+        <TabItem FontSize="12" Header="AnimDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
-                    
-        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="AnimNames">
-            <views:AnimationsControl/>
+        <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="AnimNames">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,10,0">
+                    <Button Margin="0,2,0,2">
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                    <Button Margin="0,2,0,2" >
+                        <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/disabled_by_default_FILL0_wght400_GRAD0_opsz24.png"/>
+                    </Button>
+                </StackPanel>
+                
+                <ListBox MinWidth="620"  ItemsSource="{Binding AnimNames}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox Width="500" DockPanel.Dock="Left" Text="{Binding Path}"/>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
         </TabItem>
     </TabControl>
-    
+
 </UserControl>
