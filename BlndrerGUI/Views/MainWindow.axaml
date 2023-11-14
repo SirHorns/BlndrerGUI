@@ -42,7 +42,23 @@
                 <views:BlndControl DataContext="{Binding BlndControl}"/>
             </TabItem>
             <TabItem Header="Output">
-                <views:OutputControl/>
+                <StackPanel Margin="12">
+                    <StackPanel>
+                        <TextBlock Margin="5" Text="Blnd Filename:"/>
+                        <TextBox Width="200" HorizontalAlignment="Left" TextAlignment="Center" Text="{Binding FileName}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0,7,0,7">
+                        <TextBlock Margin="5" Text="Generate:"/>
+                        <StackPanel Orientation="Horizontal" >
+                            <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="Blnd:" />
+                            <CheckBox Margin="10,0,0,0"  VerticalAlignment="Center" IsChecked="True"/> 
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock VerticalAlignment="Center" Width="50" TextAlignment="Right" Text="JSON:"/>
+                            <CheckBox Margin="10,0,0,0" IsChecked="false"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
             </TabItem>
         </TabControl>
     </SplitView>

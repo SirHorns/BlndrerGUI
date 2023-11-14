@@ -8,7 +8,20 @@
     
     
     <StackPanel>
-        <views:HeaderDataControl/>
+        <StackPanel Margin="12">
+            <TextBlock FontSize="20" Margin="0,0,0,10" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Binary Header"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Margin="0,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:"/>
+                <TextBlock Text="{ Binding BlndFile.Header.mEngineType}" />
+            
+                <TextBlock Margin="20,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
+                <TextBlock Text="{Binding BlndFile.Header.mBinaryBlockType}" />
+            
+                <TextBlock Margin="20,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
+                <TextBlock Text="{Binding BlndFile.Header.mBinaryBlockVersion}" />
+            </StackPanel>
+        </StackPanel>
+        
         <views:PoolDataControl/>
     </StackPanel>
     
