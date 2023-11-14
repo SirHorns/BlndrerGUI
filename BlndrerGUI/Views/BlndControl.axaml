@@ -2,21 +2,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              xmlns:views="clr-namespace:BlndrerGUI.Views"
+             xmlns:pool="clr-namespace:BlndrerGUI.Views.Pool"
              x:Class="BlndrerGUI.Views.BlndControl"
              x:DataType="vm:BlndControlViewModel">
-
-    <Design.DataContext>
-        <vm:BlndControlViewModel />
-    </Design.DataContext>
-
-    <ScrollViewer HorizontalAlignment="Center" Width="700" Height="700">
-        <TabControl>
-            <TabItem Padding="20" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="[HEADER]">
-                <views:HeaderDataControl/>
-            </TabItem>
-            <TabItem Padding="20" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="[POOL]">
-                <views:PoolDataControl/>
-            </TabItem>
-        </TabControl>
-    </ScrollViewer>
+    
+    
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Background="Bisque" Width="400">
+            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Header]"/>
+            <views:HeaderDataControl/>
+            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Pool]"/>
+            <views:PoolDataControl/>
+        </StackPanel>
+        <StackPanel Background="Khaki" Width="990">
+            <TextBlock Margin="10" FontSize="25" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="[Pool Arrays]"/>
+            <pool:PoolDataAryControl/>
+        </StackPanel>
+    </StackPanel>
+    
 </UserControl>

@@ -17,11 +17,11 @@
                   CanUserResizeColumns="False"
                   CanUserSortColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Index" Binding="{Binding Index}"/>
-                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
-                <DataGridTextColumn Header="BlendMode" Binding="{Binding BlendMode}"/>
-                <DataGridTextColumn Header="BlendWeight" Binding="{Binding BlendWeight}"/>
-                <DataGridTextColumn Header="ResourceSize" Binding="{Binding ResourceSize}"/>
+                <DataGridTextColumn Header="Index" Binding="{Binding mIndex}"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding mName}"/>
+                <DataGridTextColumn Header="BlendMode" Binding="{Binding mBlendMode}"/>
+                <DataGridTextColumn Header="BlendWeight" Binding="{Binding mBlendWeight}"/>
+                <DataGridTextColumn Header="ResourceSize" Binding="{Binding mResourceSize}"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

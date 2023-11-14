@@ -3,7 +3,9 @@
 public abstract class Resource : Writable
 {
     protected long baseAddr;
-    public uint mResourceSize;
+
+    public uint mResourceSize { get; set; }
+
     //public byte[] ExtraBytes;
     private BinaryReader br;
     public Resource(BinaryReader br)

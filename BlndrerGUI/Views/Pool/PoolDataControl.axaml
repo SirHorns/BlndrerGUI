@@ -2,51 +2,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              x:Class="BlndrerGUI.Views.PoolDataControl"
-             xmlns:views="clr-namespace:BlndrerGUI.Views"
              x:DataType="vm:BlndControlViewModel">
-    
-    <Design.DataContext>
-        <vm:BlndControlViewModel />
-    </Design.DataContext>
-    
-    <StackPanel>
-                <StackPanel>
-                    <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
-                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
-                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
-                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
-                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="CascadeBlendValue:" />
-                        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
-                                   FontFamily="{StaticResource EnriquetaFont}" Text="Skeleton:" />
 
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Pool.Version}" />
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Pool.FormatToken}" />
-                        <ComboBox Grid.Row="2" Grid.Column="1" SelectedIndex="{Binding BlndFile.Pool.UseCascadeBlend}">
-                            <ComboBoxItem Content="False"/>
-                            <ComboBoxItem Content="True"/>
-                        </ComboBox>
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding BlndFile.Pool.CascadeBlendValue}" />
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding BlndFile.Pool.Skeleton}" />
-                    </Grid>
-                </StackPanel>
-                
-                <TabControl>
-                    <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendDataAry">
-                        <views:BlendDataAryControl/>
-                    </TabItem>
-                    
-                    <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlndTracks">
-                        <views:BlndTracksControl/>
-                    </TabItem>
-                    
-                    <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="Animations">
-                        <views:AnimationsControl/>
-                    </TabItem>
-                </TabControl>
-
-            </StackPanel>
+    <StackPanel Margin="9">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
+            <TextBlock Text="{Binding BlndFile.Pool.mVersion}" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
+            <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
+            <TextBlock Text="{Binding BlndFile.Pool.mFormatToken}" />
+        </StackPanel>
+        <StackPanel>
+            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
+            <ComboBox Margin="0,0,0,5" SelectedIndex="{Binding BlndFile.Pool.mUseCascadeBlend}">
+                <ComboBoxItem Content="False" />
+                <ComboBoxItem Content="True" />
+            </ComboBox>
+            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="CascadeBlendValue:" />
+            <TextBox Margin="0,0,0,5" Width="100" HorizontalAlignment="Left"  TextAlignment="Center" Text="{Binding BlndFile.Pool.mCascadeBlendValue}" />
+            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="TransitionData:" />
+            <TextBlock Margin="0,0,0,5" Text="TODO:" />
+            <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Skeleton:" />
+            <TextBox Margin="0,0,0,5" Text="{Binding BlndFile.Pool.mSkeleton.Path}" />
+        </StackPanel>
+    </StackPanel>
 </UserControl>

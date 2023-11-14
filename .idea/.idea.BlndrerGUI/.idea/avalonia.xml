@@ -4,8 +4,19 @@
     <option name="projectPerEditor">
       <map>
         <entry key="BlndrerGUI/App.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/ViewModels/AnimationsControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/AnimationsControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/BlendDataAryControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/BlndControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/BlndTracksControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/HeaderDataControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/MainWindow.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Pool/AnimationsControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Pool/BlendDataAryControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Pool/BlndTracksControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Pool/PoolDataAryControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Pool/PoolDataControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/PoolDataControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
       </map>
     </option>
   </component>

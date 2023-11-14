@@ -2,10 +2,21 @@
 
 public class BlendData : Writable
 {
-    public uint mFromAnimId;
-    public uint mToAnimId;
-    public uint mBlendFlags;
-    public float mBlendTime;
+    public uint mFromAnimId { get; set; }
+    public uint mToAnimId { get; set; }
+    public uint mBlendFlags { get; set; }
+    public float mBlendTime { get; set; }
+
+    public BlendData() { }
+
+    public BlendData(uint mFromAnimId, uint mToAnimId, uint mBlendFlags, float mBlendTime)
+    {
+        this.mFromAnimId = mFromAnimId;
+        this.mToAnimId = mToAnimId;
+        this.mBlendFlags = mBlendFlags;
+        this.mBlendTime = mBlendTime;
+    }
+
     public BlendData(BinaryReader br)
     {
         mFromAnimId = br.ReadUInt32();

@@ -4,28 +4,24 @@
              x:Class="BlndrerGUI.Views.AnimationsControl"
              x:DataType="vm:BlndControlViewModel">
 
-    <Design.DataContext>
-        <vm:BlndControlViewModel />
-    </Design.DataContext>
-    
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <ListBox ItemsSource="{Binding AnimNames}"
-                     Width="490"
-                     MinHeight="100"
-                     MaxHeight="300">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <TextBox DockPanel.Dock="Left" Text="{Binding}"/>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+    <StackPanel Orientation="Horizontal" Width="900">
+        <ListBox ItemsSource="{Binding AnimNames}"
+                 Width="770"
+                 Height="600">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBox DockPanel.Dock="Left" Text="{Binding Path}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
                                 
-            <StackPanel Margin="10,0,0,0">
-                <Button HorizontalAlignment="Center" Content="ADD"/>
-                <Button HorizontalAlignment="Center" Content="REMOVE"/>
-            </StackPanel>
+        <StackPanel Margin="10,0,0,0">
+            <Button Margin="0,2,0,2">
+                <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/add_box_FILL0_wght400_GRAD0_opsz24.png"/>
+            </Button>
+            <Button Margin="0,2,0,2" >
+                <Image MaxWidth="20" MaxHeight="20" Source="avares://BlndrerGUI/Assets/disabled_by_default_FILL0_wght400_GRAD0_opsz24.png"/>
+            </Button>
         </StackPanel>
-                            
     </StackPanel>
 </UserControl>

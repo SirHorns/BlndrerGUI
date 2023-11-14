@@ -2,10 +2,13 @@
 
 public class TrackResource: Resource
 {
-    public float mBlendWeight;
-    public uint mBlendMode;
-    public uint mIndex;
-    public string mName;
+    public float mBlendWeight { get; set; }
+    public uint mBlendMode { get; set; }
+    public uint mIndex { get; set; }
+    public string mName { get; set; }
+
+    public TrackResource() : base(null) { }
+
     public TrackResource(BinaryReader br): base(br)
     {
         mBlendWeight = br.ReadSingle();

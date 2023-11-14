@@ -2,22 +2,54 @@
 
 public class PoolData : Resource
 {
-    public uint mFormatToken;
-    public uint mVersion;
-    public bool mUseCascadeBlend;
-    public float mCascadeBlendValue;
+    public uint mFormatToken{ get; set; }
+    public uint mVersion { get; set; }
+    public bool mUseCascadeBlend { get; set; }
+    public float mCascadeBlendValue { get; set; }
     
-    public BlendData[]? mBlendDataAry;
-    public TransitionClipData[]? mTransitionData;
-    public TrackResource[]? mBlendTrackAry;
-    public ClipResource[]? mClassAry;
-    public MaskResource[]? mMaskDataAry;
-    public EventResource[]? mEventDataAry;
-    public AnimResourceBase?[]? mAnimDataAry;
-    public PathRecord[]? mAnimNames;
-    public PathRecord mSkeleton;
+    public BlendData[]? mBlendDataAry { get; set; }
+    public TransitionClipData[]? mTransitionData { get; set; }
+    public TrackResource[]? mBlendTrackAry { get; set; }
+    public ClipResource[]? mClassAry { get; set; }
+    public MaskResource[]? mMaskDataAry { get; set; }
+    public EventResource[]? mEventDataAry { get; set; }
+    public AnimResourceBase?[]? mAnimDataAry { get; set; }
+    public PathRecord[]? mAnimNames { get; set; }
+    public PathRecord mSkeleton { get; set; }
 
-    private uint[] mExtBuffer;
+    private uint[] mExtBuffer { get; }
+
+    public PoolData() : base(null) { }
+
+    public PoolData(
+        uint mFormatToken, 
+        uint mVersion, 
+        bool mUseCascadeBlend, 
+        float mCascadeBlendValue, 
+        BlendData[]? mBlendDataAry, 
+        TransitionClipData[]? mTransitionData, 
+        TrackResource[]? mBlendTrackAry, 
+        ClipResource[]? mClassAry, 
+        MaskResource[]? mMaskDataAry, 
+        EventResource[]? mEventDataAry, 
+        AnimResourceBase?[]? mAnimDataAry, 
+        PathRecord[]? mAnimNames, 
+        PathRecord mSkeleton): base(null)
+    {
+        this.mFormatToken = mFormatToken;
+        this.mVersion = mVersion;
+        this.mUseCascadeBlend = mUseCascadeBlend;
+        this.mCascadeBlendValue = mCascadeBlendValue;
+        this.mBlendDataAry = mBlendDataAry;
+        this.mTransitionData = mTransitionData;
+        this.mBlendTrackAry = mBlendTrackAry;
+        this.mClassAry = mClassAry;
+        this.mMaskDataAry = mMaskDataAry;
+        this.mEventDataAry = mEventDataAry;
+        this.mAnimDataAry = mAnimDataAry;
+        this.mAnimNames = mAnimNames;
+        this.mSkeleton = mSkeleton;
+    }
 
     public PoolData(BinaryReader br): base(br)
     {

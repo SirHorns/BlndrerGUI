@@ -1,0 +1,35 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.Pool.PoolDataAryControl"
+             xmlns:views="clr-namespace:BlndrerGUI.Views"
+             x:DataType="vm:BlndControlViewModel">
+    
+    <TabControl>
+        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendDataAry">
+            <views:BlendDataAryControl/>
+        </TabItem>
+                    
+        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendTrackAry">
+            <views:BlndTracksControl/>
+        </TabItem>
+                    
+        <TabItem FontSize="17" Header="ClassAry">
+            <TextBlock>TODO:</TextBlock>
+        </TabItem>
+        <TabItem FontSize="17" Header="MaskDataAry">
+            <TextBlock>TODO:</TextBlock>
+        </TabItem>
+        <TabItem FontSize="17" Header="EventDataAry">
+            <TextBlock>TODO:</TextBlock>
+        </TabItem>
+        <TabItem FontSize="17" Header="AnimDataAry">
+            <TextBlock>TODO:</TextBlock>
+        </TabItem>
+                    
+        <TabItem FontSize="17" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="AnimNames">
+            <views:AnimationsControl/>
+        </TabItem>
+    </TabControl>
+    
+</UserControl>

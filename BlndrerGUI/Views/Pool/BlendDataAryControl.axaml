@@ -13,14 +13,15 @@
                   GridLinesVisibility="Horizontal"
                   MinHeight="100"
                   MaxHeight="300"
+                  Width="500"
                   CanUserReorderColumns="False"
                   CanUserResizeColumns="False"
                   CanUserSortColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="FromAnimId" Binding="{Binding FromAnimId}"/>
-                <DataGridTextColumn Header="ToAnimId" Binding="{Binding ToAnimId}"/>
-                <DataGridTextColumn Header="BlendFlags" Binding="{Binding BlendFlags}"/>
-                <DataGridTextColumn Header="BlendTime" Binding="{Binding BlendTime}"/>
+                <DataGridTextColumn Header="FromAnimId" Binding="{Binding mFromAnimId}"/>
+                <DataGridTextColumn Header="ToAnimId" Binding="{Binding mToAnimId}"/>
+                <DataGridTextColumn Header="BlendFlags" Binding="{Binding mBlendFlags}"/>
+                <DataGridTextColumn Header="BlendTime" Binding="{Binding mBlendTime}"/>
             </DataGrid.Columns>
         </DataGrid>
     </StackPanel>

@@ -4,8 +4,19 @@ namespace blndrer;
 
 public class BlendFile: Writable
 {
-    public BinaryHeader Header;
-    public PoolData Pool;
+    public BinaryHeader Header { get; set; }
+    public PoolData Pool { get; set; }
+
+    public BlendFile()
+    {
+    }
+
+    public BlendFile(BinaryHeader header, PoolData pool)
+    {
+        Header = header;
+        Pool = pool;
+    }
+
     public BlendFile(BinaryReader br)
     {
         Header = br.Read<BinaryHeader>();
@@ -16,6 +27,7 @@ public class BlendFile: Writable
         );
         Pool = br.Read<PoolData>();
     }
+    
     public override void Write(BinaryWriter bw)
     {
         bw.Write(Header);

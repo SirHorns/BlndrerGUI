@@ -8,7 +8,7 @@
         <vm:BlndControlViewModel />
     </Design.DataContext>
     
-    <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto">
+    <Grid ColumnDefinitions="150,Auto" RowDefinitions="Auto,Auto,Auto" Margin="9">
         <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                    FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:" />
         <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
@@ -16,9 +16,9 @@
         <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,0,0,5" FontWeight="SemiBold"
                    FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.EngineType}" />
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockType}" />
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.BinaryBlockVersion}" />
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding BlndFile.Header.mEngineType}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BlndFile.Header.mBinaryBlockType}" />
+        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding BlndFile.Header.mBinaryBlockVersion}" />
     </Grid>
     
 </UserControl>

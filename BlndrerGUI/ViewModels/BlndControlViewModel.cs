@@ -1,29 +1,27 @@
 ﻿using System.Collections.ObjectModel;
 using blndrer;
-using BlndrerGUI.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
-using PathRecord = BlndrerGUI.Models.PathRecord;
 
 namespace BlndrerGUI.ViewModels;
 
 public partial class BlndControlViewModel: ViewModelBase
 {
-    [ObservableProperty] private BlendFile? _activeBlndFile;
-    [ObservableProperty] private BlndFile _blndFile;
+    [ObservableProperty] private BlendFile? _blndFile;
 
-    public ObservableCollection<BlendTrack> BlendTracks => new(BlndFile.Pool.BlendTrackAry);
-    public ObservableCollection<PathRecord> AnimNames => new(BlndFile.Pool.AnimNames);
-
+    public ObservableCollection<BlendData> BlendDataAry { get; set; } = new();
+    public ObservableCollection<TrackResource> BlendTracks => new(BlndFile.Pool.mBlendTrackAry);
+    public ObservableCollection<PathRecord> AnimNames => new(BlndFile.Pool.mAnimNames);
+    
     public BlndControlViewModel(BlendFile? file = null)
     {
         if (file is null)
         {
-            BlndFile = new BlndFile();
+            BlndFile = new BlendFile();
         }
         else
         {
-            ActiveBlndFile = file;
-            BlndFile = new BlndFile(file);
+            BlndFile = file;
+            BlendDataAry = new ObservableCollection<BlendData>(BlndFile.Pool.mBlendDataAry);
         }
     }
 }
