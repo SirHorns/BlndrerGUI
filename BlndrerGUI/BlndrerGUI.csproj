@@ -38,10 +38,6 @@
         <DependentUpon>PoolDataControl.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Views\Pool\BlndTracksControl.axaml.cs">
-        <DependentUpon>BlndTracksControl.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
     </ItemGroup>
 
 

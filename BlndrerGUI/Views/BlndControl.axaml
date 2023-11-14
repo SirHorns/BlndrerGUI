@@ -2,17 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              xmlns:views="clr-namespace:BlndrerGUI.Views"
-             xmlns:pool="clr-namespace:BlndrerGUI.Views.Pool"
              x:Class="BlndrerGUI.Views.BlndControl"
-             x:DataType="vm:BlndControlViewModel">
+             x:DataType="vm:BlndControlViewModel"
+             MinHeight="730">
     
-    <TabControl>
-        <TabItem Header="Binary Header">
-            <views:HeaderDataControl/>
-        </TabItem>
-        <TabItem Header="PoolData">
-            <views:PoolDataControl/>
-        </TabItem>
-    </TabControl>
+    
+    <StackPanel>
+        <views:HeaderDataControl/>
+        <views:PoolDataControl/>
+    </StackPanel>
     
 </UserControl>

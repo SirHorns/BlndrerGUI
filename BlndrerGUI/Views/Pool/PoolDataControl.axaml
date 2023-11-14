@@ -3,21 +3,20 @@
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              xmlns:pool="clr-namespace:BlndrerGUI.Views.Pool"
              x:Class="BlndrerGUI.Views.PoolDataControl"
-             x:DataType="vm:BlndControlViewModel"
-             Padding="9">
+             x:DataType="vm:BlndControlViewModel">
 
     
     <TabControl>
-        <TabItem Header="Main">
+        <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="PoolData">
             <StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                    <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
+                <StackPanel Margin="0,0,0,8" Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Margin="0,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Version:" />
                     <TextBlock Text="{Binding BlndFile.Pool.mVersion}" />
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0,0,0,8">
-                    <TextBlock Width="90" Margin="0,0,50,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
+                    
+                    <TextBlock Margin="20,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="FormatToken:" />
                     <TextBlock Text="{Binding BlndFile.Pool.mFormatToken}" />
                 </StackPanel>
+
                 <StackPanel>
                     <TextBlock Margin="0,0,0,5" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="UseCascadeBlend:" />
                     <ComboBox Margin="0,0,0,5" SelectedIndex="{Binding BlndFile.Pool.mUseCascadeBlend}">
@@ -33,7 +32,7 @@
                 </StackPanel>
             </StackPanel>
         </TabItem>
-        <TabItem Header="Arrays">
+        <TabItem FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="PoolData Arys">
             <pool:PoolDataAryControl/>
         </TabItem>
     </TabControl>

@@ -8,8 +8,7 @@
         Title="{Binding WindowTitle}"
         Width="817"
         Height="764"
-        MinWidth="817"
-        MinHeight="764">
+        CanResize="False">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>

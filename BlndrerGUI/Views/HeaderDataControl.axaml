@@ -3,24 +3,20 @@
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              x:Class="BlndrerGUI.Views.HeaderDataControl"
              x:DataType="vm:BlndControlViewModel"
-             Padding="9">
+             Padding="12">
     
     <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Width="130" Margin="0,0,20,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:"/>
+        <TextBlock FontSize="20" Margin="0,0,0,10" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="Binary Header"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock Margin="0,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="EngineType:"/>
             <TextBlock Text="{ Binding BlndFile.Header.mEngineType}" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Width="130" Margin="0,0,20,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
+            
+            <TextBlock Margin="20,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockType:" />
             <TextBlock Text="{Binding BlndFile.Header.mBinaryBlockType}" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock Width="130" Margin="0,0,20,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
+            
+            <TextBlock Margin="20,0,10,0" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Text="BinaryBlockVersion:" />
             <TextBlock Text="{Binding BlndFile.Header.mBinaryBlockVersion}" />
         </StackPanel>
-        
-        
-        
     </StackPanel>
     
 </UserControl>

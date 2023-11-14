@@ -2,12 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              x:Class="BlndrerGUI.Views.Pool.PoolDataAryControl"
-             xmlns:views="clr-namespace:BlndrerGUI.Views"
              x:DataType="vm:BlndControlViewModel"
              MinWidth="700"
-             MaxWidth="1750"
-             MaxHeight="800"
-             MinHeight="600">
+             MaxHeight="580"
+             MinHeight="580">
 
     <TabControl>
         <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendDataAry">
