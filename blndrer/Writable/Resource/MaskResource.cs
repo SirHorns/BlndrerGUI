@@ -1,4 +1,4 @@
-﻿namespace blndrer;
+﻿namespace blndrer.Writable.Resource;
 
 public class MaskResource : Resource
 {

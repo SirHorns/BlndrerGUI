@@ -1,4 +1,6 @@
-﻿namespace blndrer;
+﻿using blndrer.Writable.Resource;
+
+namespace blndrer;
 
 public class TrackResource: Resource
 {

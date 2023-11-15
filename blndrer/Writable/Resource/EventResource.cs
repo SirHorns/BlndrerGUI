@@ -1,4 +1,4 @@
-using blndrer;
+namespace blndrer.Writable.Resource;
 
 public class EventResource: Resource
 {

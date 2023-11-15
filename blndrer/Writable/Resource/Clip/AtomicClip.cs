@@ -1,6 +1,6 @@
-﻿namespace blndrer;
+﻿namespace blndrer.Writable.Resource.Clip;
 
-class AtomicClip : ClipData
+class AtomicClip : Clip.ClipData
 {
     public uint mStartTick;
     public uint mEndTick;

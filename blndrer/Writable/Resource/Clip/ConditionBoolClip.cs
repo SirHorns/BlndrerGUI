@@ -1,12 +1,12 @@
-﻿namespace blndrer;
+﻿namespace blndrer.Writable.Resource.Clip;
 
-internal class ConditionFloatClip : ClipData
+class ConditionBoolClip : ClipData
 {
     public uint mTrackIndex;
     public uint mNumPairs;
     public uint mUpdaterType;
     public bool mChangeAnimationMidPlay;
-    public ConditionFloatClip(BinaryReader br) : base(br)
+    public ConditionBoolClip(BinaryReader br) : base(br)
     {
         mTrackIndex = br.ReadUInt32();
         mNumPairs = br.ReadUInt32();

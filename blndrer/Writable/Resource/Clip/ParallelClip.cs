@@ -1,4 +1,4 @@
-﻿namespace blndrer;
+﻿namespace blndrer.Writable.Resource.Clip;
 
 internal class ParallelClip : ClipData
 {

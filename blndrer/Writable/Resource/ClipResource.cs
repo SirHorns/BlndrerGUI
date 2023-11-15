@@ -1,6 +1,6 @@
+using blndrer.Writable.Resource.Clip;
 
-using System.Diagnostics;
-using blndrer;
+namespace blndrer.Writable.Resource;
 
 public class ClipResource: Resource
 {

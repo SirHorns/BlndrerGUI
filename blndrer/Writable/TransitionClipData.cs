@@ -1,4 +1,4 @@
-﻿namespace blndrer;
+﻿namespace blndrer.Writable;
 
 public class TransitionClipData : Writable
 {

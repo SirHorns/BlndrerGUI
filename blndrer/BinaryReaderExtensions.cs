@@ -1,3 +1,5 @@
+namespace blndrer;
+
 using System.Diagnostics;
 using System.Text;
 using blndrer;
@@ -86,7 +88,7 @@ public static class BinaryReaderExtensions
         return (T)readed;
     }
 
-    public static void Write(this BinaryWriter bw, Writable? wobj)
+    public static void Write(this BinaryWriter bw, Writable.Writable? wobj)
     {
         Memory.Write(bw, wobj);
     }

@@ -1,8 +1,10 @@
 ﻿using System.Diagnostics;
+using blndrer.Writable;
+using blndrer.Writable.Resource;
 
 namespace blndrer;
 
-public class BlendFile: Writable
+public class BlendFile: Writable.Writable
 {
     public BinaryHeader Header { get; set; }
     public PoolData Pool { get; set; }
