@@ -1,8 +1,9 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             xmlns:clips="clr-namespace:BlndrerGUI.Views.Clips"
              x:Class="BlndrerGUI.Views.Pool.PoolDataAryControl"
-             x:DataType="vm:BlndControlViewModel"
+             x:DataType="vm:BlndControlVM"
              MinWidth="700"
              MaxHeight="580"
              MinHeight="580">
@@ -33,6 +34,7 @@
                 </DataGrid>
             </StackPanel>
         </TabItem>
+        
         <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="BlendTrackAry">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="0,0,10,0">
@@ -58,20 +60,60 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </StackPanel>
-            
         </TabItem>
+        
         <TabItem FontSize="12" Header="ClassAry">
-            <TextBlock>TODO:</TextBlock>
+            <clips:ClipResourceControl/>
         </TabItem>
+        
         <TabItem FontSize="12" Header="MaskDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
+        
         <TabItem FontSize="12" Header="EventDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
+        
         <TabItem FontSize="12" Header="AnimDataAry">
             <TextBlock>TODO:</TextBlock>
         </TabItem>
+        
+        <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="Test">
+            <Border BorderThickness="3" BorderBrush="Black">
+                <StackPanel>
+                    <TextBlock Text="Flags"/>
+                    <TextBlock Text="UniqueId"/>
+                    <TextBlock Text="Name"/>
+                    <Border BorderThickness="3" BorderBrush="Coral">
+                        <StackPanel>
+                            <TextBlock Text="[ClipData]"/>
+                            <TextBlock Text="StartTick"/>
+                            <TextBlock Text="EndTick"/>
+                            <TextBlock Text="TickDuration"/>
+                            <TextBlock Text="AnimDataIndex"/>
+                            <TextBlock Text="EventData: TODO"/>
+                            <TextBlock Text="MaskData: TODO"/>
+                            <Border BorderThickness="3" BorderBrush="Brown">
+                                <StackPanel>
+                                    <TextBlock Text="[TrackData]"/>
+                                    <TextBlock Text="BlendWeight"/>
+                                    <TextBlock Text="BlendMode"/>
+                                    <TextBlock Text="Index"/>
+                                    <TextBlock Text="Name"/>
+                                    <TextBlock Text="ResourceSize"/>
+                                </StackPanel>
+                            </Border>
+                            <TextBlock Text="UpdateData: TODO"/>
+                            <TextBlock Text="SynxGroupName: TODO"/>
+                            <TextBlock Text="ExtBuffer: [int]"/>
+                            <TextBlock Text="ClipTypeID"/>
+                        </StackPanel>
+                    </Border>
+                    <TextBlock Text="ResourceSize"/>
+                </StackPanel>   
+            </Border>
+        </TabItem>
+        
         <TabItem FontSize="12" FontWeight="SemiBold" FontFamily="{StaticResource EnriquetaFont}" Header="AnimNames">
             <StackPanel Orientation="Horizontal">
                 <StackPanel Margin="0,0,10,0">
