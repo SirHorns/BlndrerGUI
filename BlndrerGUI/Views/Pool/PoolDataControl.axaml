@@ -3,7 +3,7 @@
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              xmlns:pool="clr-namespace:BlndrerGUI.Views.Pool"
              x:Class="BlndrerGUI.Views.PoolDataControl"
-             x:DataType="vm:BlndControlViewModel">
+             x:DataType="vm:BlndControlVM">
 
     
     <TabControl>

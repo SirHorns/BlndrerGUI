@@ -9,6 +9,9 @@
         <entry key="BlndrerGUI/Views/BlendDataAryControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/BlndControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/BlndTracksControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Clips/AtomicClipControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Clips/ClipResourceControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
+        <entry key="BlndrerGUI/Views/Clips/UserControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/HeaderDataControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/MainWindow.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />
         <entry key="BlndrerGUI/Views/OutputControl.axaml" value="BlndrerGUI/BlndrerGUI.csproj" />

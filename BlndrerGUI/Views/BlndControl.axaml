@@ -3,7 +3,7 @@
              xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
              xmlns:views="clr-namespace:BlndrerGUI.Views"
              x:Class="BlndrerGUI.Views.BlndControl"
-             x:DataType="vm:BlndControlViewModel"
+             x:DataType="vm:BlndControlVM"
              MinHeight="730">
     
     

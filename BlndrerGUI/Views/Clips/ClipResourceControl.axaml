@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:BlndrerGUI.ViewModels"
+             x:Class="BlndrerGUI.Views.Clips.ClipResourceControl"
+             x:DataType="vm:ClipResourceVM">
+    
+    
+    <Border BorderBrush="Red" BorderThickness="4">
+        <StackPanel>
+            <ComboBox>
+                <ComboBoxItem>None</ComboBoxItem>
+                <ComboBoxItem>Main</ComboBoxItem>
+                <ComboBoxItem>Loop</ComboBoxItem>
+                <ComboBoxItem>Continue</ComboBoxItem>
+                <ComboBoxItem>PlayOnce</ComboBoxItem>
+            </ComboBox>
+            
+            <ContentControl Content="{Binding ClipData}"/>
+            
+            <TextBlock Text="UniqueId"/>
+            <TextBlock Text="Name"/>
+            <TextBlock Text="ReseourceSize"/>
+        </StackPanel>
+    </Border>
+</UserControl>

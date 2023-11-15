@@ -3,7 +3,7 @@
         xmlns:vm="using:BlndrerGUI.ViewModels"
         xmlns:views="clr-namespace:BlndrerGUI.Views"
         x:Class="BlndrerGUI.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
+        x:DataType="vm:MainWindowVM"
         Icon="/Assets/icon.ico"
         Title="{Binding WindowTitle}"
         Width="817"
@@ -11,7 +11,7 @@
         CanResize="False">
 
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:MainWindowVM/>
     </Design.DataContext>
     
     <SplitView IsPaneOpen="True"

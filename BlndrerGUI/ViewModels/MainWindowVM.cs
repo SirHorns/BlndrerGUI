@@ -10,17 +10,17 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BlndrerGUI.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase
+public partial class MainWindowVM : ViewModelBase
 {
     [ObservableProperty] string _windowTitle = "BlndrerGUI";
-    [ObservableProperty] BlndControlViewModel _blndControl;
+    [ObservableProperty] BlndControlVM _blndControl;
     [ObservableProperty] private string _fileName = "BADWOLF";
     [ObservableProperty] private bool _createBlnd = true;
     [ObservableProperty] private bool _createJson = false;
     
-    public MainWindowViewModel()
+    public MainWindowVM()
     {
-        BlndControl = new BlndControlViewModel();
+        BlndControl = new BlndControlVM();
     }
 
 
@@ -46,7 +46,7 @@ public partial class MainWindowViewModel : ViewModelBase
             WindowTitle = $"BlndrerGUI: {file.Path.AbsolutePath}";
             FileName = file.Name.Split(".")[0];
             var blnd = BlndTools.ReadBLND(file.Path.AbsolutePath);
-            BlndControl = new BlndControlViewModel(blnd);
+            BlndControl = new BlndControlVM(blnd);
         }
         catch (Exception e)
         {

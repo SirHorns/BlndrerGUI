@@ -1,0 +1,32 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BlndrerGUI.Views.Clips.AtomicClipControl">
+    <Border BorderBrush="Blue" BorderThickness="4">
+        <StackPanel>
+            <TextBlock Text="StartTick"/>
+            <TextBlock Text="EndTick"/>
+            <TextBlock Text="TickDuration"/>
+            <TextBlock Text="AnimDataIndex"/>
+            <TextBlock Text="EventData: TODO"/>
+            <TextBlock Text="MaskData: TODO"/>
+            
+            <TextBlock Text="TRACK_DATA"/>
+            
+            <TextBlock Text="UpdaterData: TODO"/>
+            <TextBlock Text="SyncGroupName: TODO"/>
+            <TextBlock Text="SyncGroup"/>
+            <TextBlock Text="ExtBuffer [int]"/>
+            <ComboBox>
+                <ComboBoxItem Content="Invalid"/>
+                <ComboBoxItem Content="Atomic"/>
+                <ComboBoxItem Content="Selector"/>
+                <ComboBoxItem Content="Sequencer"/>
+                <ComboBoxItem Content="Parallel"/>
+                <ComboBoxItem Content="MultiChildClip"/>
+                <ComboBoxItem Content="Parametric"/>
+                <ComboBoxItem Content="ConditionBool"/>
+                <ComboBoxItem Content="ConditionFloat"/>
+            </ComboBox>
+        </StackPanel>
+    </Border>
+</UserControl>

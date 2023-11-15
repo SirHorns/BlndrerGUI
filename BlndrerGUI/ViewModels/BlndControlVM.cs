@@ -7,14 +7,14 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace BlndrerGUI.ViewModels;
 
-public partial class BlndControlViewModel: ViewModelBase
+public partial class BlndControlVM: ViewModelBase
 {
     [ObservableProperty] private BlendFile? _blndFile;
     [ObservableProperty] private ObservableCollection<PathRecord> _animNames = new ObservableCollection<PathRecord>();
     [ObservableProperty] private ObservableCollection<BlendData> _blendDataAry = new ObservableCollection<BlendData>();
     [ObservableProperty] private ObservableCollection<TrackResource> _blendTrackAry =new ObservableCollection<TrackResource>();
     
-    public BlndControlViewModel(BlendFile? file = null)
+    public BlndControlVM(BlendFile? file = null)
     {
         if (file is null)
         {
